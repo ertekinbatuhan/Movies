@@ -9,7 +9,7 @@ struct TvView: View {
         NavigationView {
             ScrollView {
                 LazyVStack(spacing: 20) {
-                    ForEach(viewModel.tvShows) { tvShow in
+                    ForEach(TvHelper.filteredTvShows(tvShows: viewModel.tvShows, searchText: searchText)) { tvShow in
                         NavigationLink(destination: TvDetailsView(tvShow: tvShow)) {
                             VStack(alignment: .leading, spacing: 10) {
                                 AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/w500\(tvShow.posterPath)")) { tv in

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C02AA3772C31EE9700ACDBC3 /* TvHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02AA3762C31EE9600ACDBC3 /* TvHelper.swift */; };
+		C02AA3792C31EF6900ACDBC3 /* PopularHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02AA3782C31EF6900ACDBC3 /* PopularHelper.swift */; };
 		C06983D02C31D071001DE9C8 /* PopularViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06983CF2C31D071001DE9C8 /* PopularViewModel.swift */; };
 		C06983D22C31D143001DE9C8 /* TvViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06983D12C31D143001DE9C8 /* TvViewModel.swift */; };
 		C0863A4C2C315CA00019986A /* Movies_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0863A4B2C315CA00019986A /* Movies_AppApp.swift */; };
@@ -29,6 +31,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C02AA3762C31EE9600ACDBC3 /* TvHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvHelper.swift; sourceTree = "<group>"; };
+		C02AA3782C31EF6900ACDBC3 /* PopularHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularHelper.swift; sourceTree = "<group>"; };
 		C06983CF2C31D071001DE9C8 /* PopularViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularViewModel.swift; sourceTree = "<group>"; };
 		C06983D12C31D143001DE9C8 /* TvViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvViewModel.swift; sourceTree = "<group>"; };
 		C0863A482C315CA00019986A /* Movies App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Movies App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +66,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C02AA3752C31EE4A00ACDBC3 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				C02AA3762C31EE9600ACDBC3 /* TvHelper.swift */,
+				C02AA3782C31EF6900ACDBC3 /* PopularHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		C06983CC2C31CF88001DE9C8 /* Trend */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +172,7 @@
 		C0863A4A2C315CA00019986A /* Movies App */ = {
 			isa = PBXGroup;
 			children = (
+				C02AA3752C31EE4A00ACDBC3 /* Helpers */,
 				C0863A5C2C315CE20019986A /* Enums */,
 				C0863A6A2C31623C0019986A /* Components */,
 				C0863A692C315DB60019986A /* Modules */,
@@ -307,9 +321,11 @@
 				C0863A5E2C315CEF0019986A /* NetworkError.swift in Sources */,
 				C0863A742C3171F70019986A /* RatingView.swift in Sources */,
 				C0863A672C315D3C0019986A /* Popular.swift in Sources */,
+				C02AA3772C31EE9700ACDBC3 /* TvHelper.swift in Sources */,
 				C0863A5A2C315CCC0019986A /* PopularView.swift in Sources */,
 				C0863A652C315D320019986A /* Tv.swift in Sources */,
 				C0863A4C2C315CA00019986A /* Movies_AppApp.swift in Sources */,
+				C02AA3792C31EF6900ACDBC3 /* PopularHelper.swift in Sources */,
 				C0863A632C315D280019986A /* Trend.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

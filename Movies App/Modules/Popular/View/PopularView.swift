@@ -9,7 +9,7 @@ struct PopularView: View {
         NavigationView {
             ScrollView {
                 VStack(spacing: 20) {
-                    ForEach(viewModel.popular) { movie in
+                    ForEach(PopularHelper.filteredPopularResults(results: viewModel.popular, searchText: searchText)) { movie in
                         NavigationLink(destination: PopularDetailsView(movie: movie)) {
                             VStack {
                                 ZStack {
