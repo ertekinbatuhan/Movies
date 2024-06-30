@@ -41,11 +41,10 @@ struct PopularView: View {
                                                     .padding(.horizontal, 10)
                                                 
                                                 HStack(spacing: 5) {
-                                                RatingView(rating: movie.voteAverage)
-                                                .foregroundColor(.yellow)
-                                                .padding(.horizontal, 10)
-                                                                                        
-                                                    }
+                                                    RatingView(rating: movie.voteAverage)
+                                                        .foregroundColor(.yellow)
+                                                        .padding(.horizontal, 10)
+                                                }
                                                                                                 
                                                 Text("Release Date: \(movie.releaseDate)")
                                                     .font(.subheadline)
@@ -65,15 +64,22 @@ struct PopularView: View {
                             }
                             .padding(.horizontal)
                         }
+                        .onAppear {
+                            if movie.id == viewModel.popular.last?.id {
+                                Task {
+                                    await viewModel.fetchPopularMovies(page: viewModel.currentPage + 1)
+                                }
+                            }
+                        }
                     }
                 }
                 .padding()
                 .searchable(text: $searchText)
             }
             .task {
-                await viewModel.fetchPopularMovies()
+                await viewModel.fetchPopularMovies(page: 1)
             }
-            .navigationTitle("Movies")
+            .navigationTitle("Popular Movies")
         }
     }
 }

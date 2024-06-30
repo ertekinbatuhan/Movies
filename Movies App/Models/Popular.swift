@@ -23,7 +23,7 @@ struct Popular: Codable {
 }
 
 // MARK: - Result
-struct PopularResult: Codable ,Identifiable{
+struct PopularResult: Codable ,Identifiable {
     let id: Int
     let adult: Bool
     let backdropPath: String
@@ -34,6 +34,8 @@ struct PopularResult: Codable ,Identifiable{
     let video: Bool
     let voteAverage: Double
     let voteCount: Int
+    
+ 
 
     enum CodingKeys: String, CodingKey {
         case adult

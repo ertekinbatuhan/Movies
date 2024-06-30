@@ -1,10 +1,3 @@
-//
-//  TvView.swift
-//  Movies App
-//
-//  Created by Batuhan Berk Ertekin on 30.06.2024.
-//
-
 import SwiftUI
 
 struct TvView: View {
@@ -63,6 +56,13 @@ struct TvView: View {
                                 .cornerRadius(15)
                             }
                             .padding(.horizontal, 16)
+                        }
+                        .onAppear {
+                            if tvShow.id == viewModel.tvShows.last?.id {
+                                Task {
+                                    await viewModel.fetchTvShows(page: viewModel.currentPage + 1)
+                                }
+                            }
                         }
                     }
                     .padding(.top, 20)

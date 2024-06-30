@@ -1,31 +1,36 @@
-//
-//  TvViewModel.swift
-//  Movies App
-//
+
 //  Created by Batuhan Berk Ertekin on 30.06.2024.
-//
 
 import Foundation
 
 @MainActor
-class TvViewModel : ObservableObject{
+class TvViewModel: ObservableObject {
     
     @Published var tvShows: [TvResult] = []
     @Published var errorMessage: String?
-    
-    
-    func fetchTvShows() async {
+    var currentPage = 1
+    var totalPages = 1
+
+    func fetchTvShows(page: Int = 1) async {
+        guard page <= totalPages else { return }
+
         do {
-            self.tvShows = try await fetchItems(from: APIConstants.TV_URL, apiKey: APIConstants.API_KEY, responseType: Tv.self).results
+            let response = try await fetchItems(from: APIConstants.TV_URL, apiKey: APIConstants.API_KEY, page: page, responseType: Tv.self)
+            if page == 1 {
+                self.tvShows = response.results
+            } else {
+                self.tvShows += response.results
+            }
+            self.totalPages = response.totalPages
+            self.currentPage = page 
         } catch {
             self.errorMessage = error.localizedDescription
             print("Error fetching TV shows: \(error.localizedDescription)")
         }
     }
     
-    
-    private func fetchItems<T: Codable>(from url: String, apiKey: String, responseType: T.Type) async throws -> T {
-        guard let url = URL(string: "\(url)?api_key=\(apiKey)") else {
+    private func fetchItems<T: Codable>(from url: String, apiKey: String, page: Int, responseType: T.Type) async throws -> T {
+        guard let url = URL(string: "\(url)?api_key=\(apiKey)&page=\(page)") else {
             throw NetworkError.invalidURL
         }
         
@@ -38,5 +43,5 @@ class TvViewModel : ObservableObject{
             throw NetworkError.requestFailed(error)
         }
     }
-    
 }
+
