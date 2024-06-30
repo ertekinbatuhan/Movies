@@ -21,7 +21,7 @@ struct TvDetailsView: View {
                         image
                             .resizable()
                             .aspectRatio(contentMode: .fill)
-                            .frame(height: 350)
+                            .frame(height: 400)
                             .cornerRadius(15)
                     default:
                         ProgressView()
