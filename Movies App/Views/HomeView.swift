@@ -5,6 +5,7 @@ import SwiftUI
 struct HomeView: View {
     
     @ObservedObject var viewModel = MovieViewModel()
+
     
     var body: some View {
         VStack {
@@ -19,16 +20,16 @@ struct HomeView: View {
                         .padding(.horizontal)
                         .shadow(radius: 10)
                     
-                    // Header bar for Popular Movies
+                  
                     VStack(spacing: 10) {
                         Spacer()
                         
                         Text("Trend")
                             .font(.title)
-                            .foregroundColor(.white)
+                            .foregroundColor(.primary)
                             .padding(.horizontal)
                             .frame(maxWidth: .infinity, alignment: .leading)
-                        
+                            
                         Spacer()
                     }
                     
@@ -58,7 +59,7 @@ struct HomeView: View {
                                     if let title = movie.title {
                                         Text(title)
                                             .font(.caption)
-                                            .foregroundColor(.white)
+                                            .foregroundColor(.primary)
                                             .multilineTextAlignment(.center)
                                             .padding(.horizontal, 10)
                                     }
@@ -71,13 +72,13 @@ struct HomeView: View {
                         .padding(.top, 10)
                     }
                     
-                    // Header bar for Trending TV Shows
+                    
                     VStack(spacing: 10) {
                         Spacer()
                         
                         Text("TV")
                             .font(.title)
-                            .foregroundColor(.white)
+                            .foregroundColor(.primary)
                             .padding(.horizontal)
                             .frame(maxWidth: .infinity, alignment: .leading)
                         
@@ -109,7 +110,7 @@ struct HomeView: View {
                                     Spacer()
                                     Text(tvShow.name)
                                         .font(.caption)
-                                        .foregroundColor(.white)
+                                        .foregroundColor(.primary)
                                         .multilineTextAlignment(.center)
                                         .padding(.horizontal, 10)
                                     Spacer()
@@ -121,13 +122,13 @@ struct HomeView: View {
                         .padding(.top, 10)
                     }
                     
-                    // Header bar for Popular TV Shows
+                    
                     VStack(spacing: 10) {
                         Spacer()
                         
                         Text("Popular")
                             .font(.title)
-                            .foregroundColor(.white)
+                            .foregroundColor(.primary)
                             .padding(.horizontal)
                             .frame(maxWidth: .infinity, alignment: .leading)
                         
@@ -158,11 +159,12 @@ struct HomeView: View {
                                                       
                                     Spacer()
                                     Text(popular.title)
-                                                .font(.caption)
-                                                    .foregroundColor(.white)
-                                                .multilineTextAlignment(.center)
+                                        .font(.caption)
+                                        .foregroundColor(.primary)
+                                        .multilineTextAlignment(.center)
                                         .padding(.horizontal, 10)
-                                                      Spacer()
+                                
+                                                Spacer()
                                                   }
                                                   .frame(width: 150)
                                               }
