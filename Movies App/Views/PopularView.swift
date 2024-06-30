@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct PopularView: View {
+    
     @ObservedObject var viewModel = MovieViewModel()
     @State private var searchText = ""
     @State private var selectedMovie: PopularResult? = nil
@@ -10,7 +11,7 @@ struct PopularView: View {
             ScrollView {
                 VStack(spacing: 20) {
                     ForEach(viewModel.popular) { movie in
-                        NavigationLink(destination: DetailsView(movie: movie)) {
+                        NavigationLink(destination: PopularDetailsView(movie: movie)) {
                             VStack {
                                 ZStack {
                                     AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/w500\(movie.posterPath)")) { phase in

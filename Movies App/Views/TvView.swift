@@ -13,35 +13,36 @@ struct TvView: View {
     @State private var searchText = ""
     
     var body: some View {
-        NavigationStack {
-            VStack {
-                ScrollView {
-                    LazyVStack(spacing: 20) {
-                        ForEach(viewModel.tvShows) { tvShow in
+        NavigationView {
+            ScrollView {
+                LazyVStack(spacing: 20) {
+                    ForEach(viewModel.tvShows) { tvShow in
+                        NavigationLink(destination: TvDetailsView(tvShow: tvShow)) {
                             VStack(alignment: .leading, spacing: 10) {
                                 ZStack(alignment: .bottomTrailing) {
-                                    AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/w500\(tvShow.posterPath)")) { phase in
-                                        switch phase {
+                                    AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/w500\(tvShow.posterPath)")) { tvShow in
+                                        switch tvShow{
                                         case .success(let image):
                                             image
                                                 .resizable()
+                                                .clipped()
                                                 .aspectRatio(contentMode: .fill)
                                                 .frame(width: UIScreen.main.bounds.width - 32, height: 350)
                                                 .cornerRadius(15)
                                                 .shadow(radius: 4)
+                                               
                                         default:
                                             ProgressView()
                                                 .frame(width: UIScreen.main.bounds.width - 32, height: 350)
                                                 .progressViewStyle(CircularProgressViewStyle(tint: .white))
                                         }
-                                    }.navigationTitle("Tv Shows")
-                                    .searchable(text: $searchText)
+                                    }
                                     .cornerRadius(15)
                                     
                                     VStack(alignment: .leading, spacing: 8) {
                                         Text(tvShow.name)
                                             .font(.headline)
-                                            .foregroundColor(.white)
+                                            .foregroundColor(.primary)
                                             .padding(.horizontal, 10)
                                             .padding(.vertical, 6)
                                             .background(Color.black.opacity(0.7))
@@ -63,19 +64,20 @@ struct TvView: View {
                                     .padding(.trailing, 8)
                                 }
                                 .frame(width: UIScreen.main.bounds.width - 32, height: 350)
-                            }
-                            .background(Color.gray.opacity(0.2))
-                            .cornerRadius(15)
-                            .padding(.horizontal, 16)
+                                .background(Color.gray.opacity(0.2))
+                                .cornerRadius(15)
+                                .padding(.horizontal, 16)
+                            }.searchable(text: $searchText)
                         }
                     }
                     .padding(.top, 20)
                     .padding(.bottom, 40)
                 }
             }
+            .navigationTitle("Tv Shows")
             .task {
                 await viewModel.fetchTvShows()
-        }
+            }
         }
     }
 }
