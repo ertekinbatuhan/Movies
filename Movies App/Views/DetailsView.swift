@@ -22,7 +22,7 @@ struct DetailsView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
-                // Movie Poster Image
+                
                 AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/w500\(movie.posterPath)")) { phase in
                     switch phase {
                     case .success(let image):
