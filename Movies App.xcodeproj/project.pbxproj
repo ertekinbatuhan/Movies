@@ -21,6 +21,7 @@
 		C0863A6E2C3163910019986A /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0863A6D2C3163910019986A /* DetailsView.swift */; };
 		C0863A702C316D680019986A /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0863A6F2C316D680019986A /* APIConstants.swift */; };
 		C0863A722C316E980019986A /* TvView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0863A712C316E980019986A /* TvView.swift */; };
+		C0863A742C3171F70019986A /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0863A732C3171F70019986A /* RatingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		C0863A6D2C3163910019986A /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 		C0863A6F2C316D680019986A /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		C0863A712C316E980019986A /* TvView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvView.swift; sourceTree = "<group>"; };
+		C0863A732C3171F70019986A /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				C0863A6B2C3162510019986A /* TabBar.swift */,
+				C0863A732C3171F70019986A /* RatingView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 				C0863A722C316E980019986A /* TvView.swift in Sources */,
 				C0863A612C315D090019986A /* MovieViewModel.swift in Sources */,
 				C0863A5E2C315CEF0019986A /* NetworkError.swift in Sources */,
+				C0863A742C3171F70019986A /* RatingView.swift in Sources */,
 				C0863A672C315D3C0019986A /* Popular.swift in Sources */,
 				C0863A5A2C315CCC0019986A /* PopularView.swift in Sources */,
 				C0863A652C315D320019986A /* Tv.swift in Sources */,

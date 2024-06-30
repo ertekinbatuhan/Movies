@@ -1,20 +1,5 @@
 import SwiftUI
 
-struct RatingView: View {
-    
-    let rating: Double
-    var body: some View {
-        let maxRating: Int = 5
-        let normalizedRating = Int((rating / 2).rounded(.toNearestOrAwayFromZero))
-        
-        HStack(spacing: 5) {
-            ForEach(1...maxRating, id: \.self) { index in
-                Image(systemName: index <= normalizedRating ? "star.fill" : "star")
-                    .foregroundColor(.yellow)
-            }
-        }
-    }
-}
 
 struct DetailsView: View {
     let movie: PopularResult

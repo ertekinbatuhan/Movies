@@ -17,6 +17,12 @@ struct TabBar: View {
                 
             }
             
+            TvView().tabItem {
+                
+                Label("Search",systemImage: "magnifyingglass")
+                
+            }
+            
             PopularView().tabItem {
                 
                Label("Movies",systemImage: "movieclapper")

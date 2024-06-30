@@ -40,11 +40,13 @@ struct PopularView: View {
                                                     .lineLimit(2)
                                                     .padding(.horizontal, 10)
                                                 
-                                                Text("Rating: \(movie.voteAverage)")
-                                                    .font(.subheadline)
-                                                    .foregroundColor(.white)
-                                                    .padding(.horizontal, 10)
-                                                
+                                                HStack(spacing: 5) {
+                                                RatingView(rating: movie.voteAverage)
+                                                .foregroundColor(.yellow)
+                                                .padding(.horizontal, 10)
+                                                                                        
+                                                    }
+                                                                                                
                                                 Text("Release Date: \(movie.releaseDate)")
                                                     .font(.subheadline)
                                                     .foregroundColor(.white)
