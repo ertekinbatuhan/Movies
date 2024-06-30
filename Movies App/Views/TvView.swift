@@ -19,55 +19,50 @@ struct TvView: View {
                     ForEach(viewModel.tvShows) { tvShow in
                         NavigationLink(destination: TvDetailsView(tvShow: tvShow)) {
                             VStack(alignment: .leading, spacing: 10) {
-                                ZStack(alignment: .bottomTrailing) {
-                                    AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/w500\(tvShow.posterPath)")) { tvShow in
-                                        switch tvShow{
-                                        case .success(let image):
-                                            image
-                                                .resizable()
-                                                .clipped()
-                                                .aspectRatio(contentMode: .fill)
-                                                .frame(width: UIScreen.main.bounds.width - 32, height: 350)
-                                                .cornerRadius(15)
-                                                .shadow(radius: 4)
-                                               
-                                        default:
-                                            ProgressView()
-                                                .frame(width: UIScreen.main.bounds.width - 32, height: 350)
-                                                .progressViewStyle(CircularProgressViewStyle(tint: .white))
-                                        }
+                                AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/w500\(tvShow.posterPath)")) { phase in
+                                    switch phase {
+                                    case .success(let image):
+                                        image
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fill)
+                                            .frame(width: UIScreen.main.bounds.width - 32, height: 350)
+                                            .cornerRadius(15)
+                                            .clipped()
+                                    default:
+                                        ProgressView()
+                                            .frame(width: UIScreen.main.bounds.width - 32, height: 350)
+                                            .progressViewStyle(CircularProgressViewStyle(tint: .white))
                                     }
-                                    .cornerRadius(15)
-                                    
+                                }
+                                .cornerRadius(15)
+                                .shadow(radius: 4)
+                                
+                                HStack {
                                     VStack(alignment: .leading, spacing: 8) {
                                         Text(tvShow.name)
                                             .font(.headline)
                                             .foregroundColor(.primary)
                                             .padding(.horizontal, 10)
                                             .padding(.vertical, 6)
-                                            .background(Color.black.opacity(0.7))
+                                            .background(Color.white.opacity(0.8))
                                             .cornerRadius(10)
                                             .shadow(radius: 4)
-                                        
-                                        HStack {
-                                            RatingView(rating: tvShow.voteAverage)
-                                                .foregroundColor(.yellow)
-                                                .padding(.horizontal, 10)
-                                            
-                                            Spacer()
-                                        }
-                                        .padding(.horizontal, 10)
-                                        
                                     }
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                                    .padding(.bottom, 8)
-                                    .padding(.trailing, 8)
+                                    .padding(.leading, 10)  
+                                    
+                                    Spacer()
+                                    
+                                    VStack(alignment: .trailing) {
+                                        RatingView(rating: tvShow.voteAverage)
+                                            .padding(.horizontal, 10)
+                                    }
                                 }
-                                .frame(width: UIScreen.main.bounds.width - 32, height: 350)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(.bottom, 8)
                                 .background(Color.gray.opacity(0.2))
                                 .cornerRadius(15)
-                                .padding(.horizontal, 16)
-                            }.searchable(text: $searchText)
+                            }
+                            .padding(.horizontal, 16)
                         }
                     }
                     .padding(.top, 20)
@@ -75,6 +70,7 @@ struct TvView: View {
                 }
             }
             .navigationTitle("Tv Shows")
+            .searchable(text: $searchText)
             .task {
                 await viewModel.fetchTvShows()
             }
