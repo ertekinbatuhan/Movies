@@ -4,7 +4,9 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @ObservedObject var viewModel = MovieViewModel()
+    @ObservedObject private var viewModel = TrendViewModel()
+    @ObservedObject private var popularViewModel = PopularViewModel()
+    @ObservedObject private var tvViewModel = TvViewModel()
 
     var body: some View {
         NavigationStack {
@@ -89,7 +91,7 @@ struct HomeView: View {
                         
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack(spacing: 10) {
-                                ForEach(viewModel.tvShows) { tvShow in
+                                ForEach(tvViewModel.tvShows) { tvShow in
                                     NavigationLink(destination : TvDetailsView(tvShow: tvShow)) {
                                         VStack {
                                             ZStack {
@@ -141,7 +143,7 @@ struct HomeView: View {
                         
                         ScrollView(.horizontal, showsIndicators: false) {
                                 LazyHStack(spacing: 10) {
-                            ForEach(viewModel.popular) { popular in
+                            ForEach(popularViewModel.popular) { popular in
                                 NavigationLink(destination : PopularDetailsView(movie: popular)) {
                                 VStack {
                                     ZStack {
@@ -184,8 +186,8 @@ struct HomeView: View {
             }
             .task {
                 await viewModel.fetchTrendingMovies()
-                await viewModel.fetchTvShows()
-                await viewModel.fetchPopularMovies()
+                await popularViewModel.fetchPopularMovies()
+                await tvViewModel.fetchTvShows()
         }
         }
     }

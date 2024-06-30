@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TvView: View {
     
-    @ObservedObject var viewModel = MovieViewModel()
+    @ObservedObject var viewModel = TvViewModel()
     @State private var searchText = ""
     
     var body: some View {

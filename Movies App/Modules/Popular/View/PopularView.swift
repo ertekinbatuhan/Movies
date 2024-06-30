@@ -2,7 +2,7 @@ import SwiftUI
 
 struct PopularView: View {
     
-    @ObservedObject var viewModel = MovieViewModel()
+    @ObservedObject var viewModel = PopularViewModel()
     @State private var searchText = ""
    
     var body: some View {
