@@ -15,8 +15,8 @@ struct TvDetailsView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
                 
-                AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/w500\(tvShow.posterPath)")) { phase in
-                    switch phase {
+                AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/w500\(tvShow.posterPath)")) { result in
+                    switch result {
                     case .success(let image):
                         image
                             .resizable()

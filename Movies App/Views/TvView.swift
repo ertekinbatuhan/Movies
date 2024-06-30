@@ -19,8 +19,8 @@ struct TvView: View {
                     ForEach(viewModel.tvShows) { tvShow in
                         NavigationLink(destination: TvDetailsView(tvShow: tvShow)) {
                             VStack(alignment: .leading, spacing: 10) {
-                                AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/w500\(tvShow.posterPath)")) { phase in
-                                    switch phase {
+                                AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/w500\(tvShow.posterPath)")) { tv in
+                                    switch tv {
                                     case .success(let image):
                                         image
                                             .resizable()
@@ -48,7 +48,7 @@ struct TvView: View {
                                             .cornerRadius(10)
                                             .shadow(radius: 4)
                                     }
-                                    .padding(.leading, 10)  
+                                    .padding(.leading, 10)
                                     
                                     Spacer()
                                     

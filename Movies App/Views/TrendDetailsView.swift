@@ -1,15 +1,22 @@
+//
+//  TrendDetailsView.swift
+//  Movies App
+//
+//  Created by Batuhan Berk Ertekin on 30.06.2024.
+//
+
 import SwiftUI
 
-struct PopularDetailsView: View {
+struct TrendDetailsView: View {
     
-    let movie: PopularResult
+    let movie: TrendResult
     
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
                 
-                AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/w500\(movie.posterPath)")) { popularMovie in
-                    switch popularMovie {
+                AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/w500\(movie.posterPath)")) { result in
+                    switch result {
                     case .success(let image):
                         image
                             .resizable()
@@ -25,7 +32,7 @@ struct PopularDetailsView: View {
                 .shadow(radius: 4)
                 
                
-                Text(movie.title)
+                Text(movie.title ?? "")
                     .font(.title)
                     .foregroundColor(.primary)
                 
@@ -33,7 +40,7 @@ struct PopularDetailsView: View {
                 HStack {
                     RatingView(rating: movie.voteAverage)
                     Spacer()
-                    Text(movie.releaseDate)
+                    Text(movie.releaseDate ?? "")
                         .font(.headline)
                         .foregroundColor(.secondary)
                 }
@@ -54,26 +61,30 @@ struct PopularDetailsView: View {
             }
             .padding()
         }
-        .navigationBarTitle(Text(movie.title.prefix(20)), displayMode: .inline)
+        .navigationBarTitle(Text(movie.title?.prefix(20) ?? ""), displayMode: .inline)
     }
 }
 
 #Preview {
-    PopularDetailsView(movie: PopularResult(
+    TrendDetailsView(movie: TrendResult(
+        backdropPath: "/example.jpg",
         id: 1,
+        title: "Example Movie",
+        originalTitle: "Example Original Title",
+        overview: "This is a sample overview of the movie.",
+        posterPath: "/example_poster.jpg",
+        mediaType: .movie,
         adult: false,
-        backdropPath: "/abc123.jpg",
+        originalLanguage: .en,
         genreIDS: [1, 2, 3],
-        originalLanguage: "en",
-        originalTitle: "House of Dragon",
-        overview: "House of the Dragon is an American fantasy drama television series created by George R. R. Martin and Ryan Condal for HBO. A prequel to Game of Thrones (2011–2019), it is the second television series in the A Song of Ice and Fire franchise. Condal and Miguel Sapochnik served as the showrunners for the first season.",
-        popularity: 8.5,
-        posterPath: "/def456.jpg",
+        popularity: 100.0,
         releaseDate: "2023-01-01",
-        title: "House of Dragon",
         video: false,
-        voteAverage: 8.0,
-        voteCount: 100
+        voteAverage: 8.5,
+        voteCount: 1200,
+        name: nil,
+        originalName: nil,
+        firstAirDate: nil,
+        originCountry: nil
     ))
 }
-

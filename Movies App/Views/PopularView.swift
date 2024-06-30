@@ -4,8 +4,7 @@ struct PopularView: View {
     
     @ObservedObject var viewModel = MovieViewModel()
     @State private var searchText = ""
-    @State private var selectedMovie: PopularResult? = nil
-    
+   
     var body: some View {
         NavigationView {
             ScrollView {
@@ -14,8 +13,8 @@ struct PopularView: View {
                         NavigationLink(destination: PopularDetailsView(movie: movie)) {
                             VStack {
                                 ZStack {
-                                    AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/w500\(movie.posterPath)")) { phase in
-                                        switch phase {
+                                    AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/w500\(movie.posterPath)")) { movie in
+                                        switch movie {
                                         case .success(let image):
                                             image
                                                 .resizable()
