@@ -1,7 +1,18 @@
+<h1 align="center">Movies App</h1>
 
+<p align="center">
+  The Movies App is an iOS application that allows you to view trending movies, TV shows, and popular movies using the TMDB API.
+</p>
 
-<h1 align="center"> Movies App </h1>
+## Features
 
+- Trending movies and TV shows
+- Popular movies
+- Detailed movie and TV show information
+- User-friendly interface
+- Modern design with SwiftUI
+
+## Screenshots
 
 <div style="display: flex; justify-content: space-between;">
     <img src="https://github.com/ertekinbatuhan/Movies/assets/101355515/84cfb598-9408-4732-9590-5054946bfe72" alt="image1" width="200" style="margin-right: 10px;">
@@ -17,4 +28,42 @@
     <img src="https://github.com/ertekinbatuhan/Movies/assets/101355515/885f68c8-84ad-44ad-bcaa-2b30b71cec60" alt="image4" width="200">
 </div>
 
+## API Usage
 
+The application uses the following TMDB API endpoints:
+
+- [Trending movies and TV shows](https://api.themoviedb.org/3/trending/all/day)
+- [Discover TV shows](https://api.themoviedb.org/3/discover/tv)
+- [Popular movies](https://api.themoviedb.org/3/movie/popular)
+
+## Installation
+
+1. Clone this repository:
+
+```bash
+git clone https://github.com/ertekinbatuhan/Movies.git
+
+```
+
+2. Navigate to the project directory:
+  ```bash
+cd Movies
+```
+3. Install the necessary dependencies:
+```bash
+pod install
+```
+4. Get your TMDB API key and add it to the APIService.swift file:
+```bash
+let apiKey = "YOUR_TMDB_API_KEY"
+```
+5. Open the project with Xcode:
+ ```bash
+open Movies.xcworkspace
+```
+
+## Technologies Used
+- Swift
+- SwiftUI
+- TMDB API
+  
