@@ -172,6 +172,7 @@
 		C0863A4A2C315CA00019986A /* Movies App */ = {
 			isa = PBXGroup;
 			children = (
+				C0B0B9CF2C32DA4300D0F917 /* App */,
 				C02AA3752C31EE4A00ACDBC3 /* Helpers */,
 				C0863A5C2C315CE20019986A /* Enums */,
 				C0863A6A2C31623C0019986A /* Components */,
@@ -180,7 +181,6 @@
 				C0863A5B2C315CDD0019986A /* Service */,
 				C0863A4F2C315CA20019986A /* Assets.xcassets */,
 				C0863A512C315CA20019986A /* Preview Content */,
-				C0863A4B2C315CA00019986A /* Movies_AppApp.swift */,
 			);
 			path = "Movies App";
 			sourceTree = "<group>";
@@ -236,6 +236,14 @@
 				C0863A732C3171F70019986A /* RatingView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		C0B0B9CF2C32DA4300D0F917 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				C0863A4B2C315CA00019986A /* Movies_AppApp.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -463,6 +471,7 @@
 				DEVELOPMENT_TEAM = PQ82KF7KP4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Movies;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -492,6 +501,7 @@
 				DEVELOPMENT_TEAM = PQ82KF7KP4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Movies;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
