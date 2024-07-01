@@ -1,7 +1,6 @@
 
 import Foundation
 
-// MARK: - Welcome
 struct Trend: Codable {
     let page: Int
     let results: [TrendResult]
@@ -14,7 +13,7 @@ struct Trend: Codable {
     }
 }
 
-// MARK: - Result
+
 struct TrendResult: Codable , Identifiable{
     let backdropPath: String?
     let id: Int

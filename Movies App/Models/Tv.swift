@@ -1,8 +1,8 @@
-//
+
 
 import Foundation
 
-// MARK: - Welcome
+
 struct Tv: Codable {
     let page: Int
     let results: [TvResult]
@@ -15,7 +15,7 @@ struct Tv: Codable {
     }
 }
 
-// MARK: - Result
+
 struct TvResult: Codable , Identifiable{
     let adult: Bool
     let backdropPath: String

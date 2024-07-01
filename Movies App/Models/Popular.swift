@@ -1,15 +1,9 @@
-//
-//  Popular.swift
-//  Movies App
-//
+
 //  Created by Batuhan Berk Ertekin on 30.06.2024.
-//
+
 
 import Foundation
 
-import Foundation
-
-// MARK: - Welcome
 struct Popular: Codable {
     let page: Int
     let results: [PopularResult]
@@ -22,7 +16,7 @@ struct Popular: Codable {
     }
 }
 
-// MARK: - Result
+
 struct PopularResult: Codable ,Identifiable {
     let id: Int
     let adult: Bool
