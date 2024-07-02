@@ -12,8 +12,8 @@ struct TvView: View {
                     ForEach(TvHelper.filteredTvShows(tvShows: viewModel.tvShows, searchText: searchText)) { tvShow in
                         NavigationLink(destination: TvDetailsView(tvShow: tvShow)) {
                             VStack(alignment: .leading, spacing: 10) {
-                                AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/w500\(tvShow.posterPath)")) { tv in
-                                    switch tv {
+                                AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/w500\(tvShow.posterPath)")) { tvResult in
+                                    switch tvResult {
                                     case .success(let image):
                                         image
                                             .resizable()

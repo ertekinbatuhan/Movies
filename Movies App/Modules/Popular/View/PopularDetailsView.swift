@@ -8,8 +8,8 @@ struct PopularDetailsView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
                 
-                AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/w500\(movie.posterPath)")) { popularMovie in
-                    switch popularMovie {
+                AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/w500\(movie.posterPath)")) { popularResult in
+                    switch popularResult {
                     case .success(let image):
                         image
                             .resizable()

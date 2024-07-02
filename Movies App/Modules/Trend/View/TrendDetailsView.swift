@@ -15,8 +15,8 @@ struct TrendDetailsView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
                 
-                AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/w500\(movie.posterPath)")) { result in
-                    switch result {
+                AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/w500\(movie.posterPath)")) { trendResult in
+                    switch trendResult {
                     case .success(let image):
                         image
                             .resizable()
