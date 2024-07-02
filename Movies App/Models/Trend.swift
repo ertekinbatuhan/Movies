@@ -13,7 +13,6 @@ struct Trend: Codable {
     }
 }
 
-
 struct TrendResult: Codable , Identifiable{
     let backdropPath: String?
     let id: Int

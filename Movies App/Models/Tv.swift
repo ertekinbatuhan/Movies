@@ -1,7 +1,5 @@
 
-
 import Foundation
-
 
 struct Tv: Codable {
     let page: Int
@@ -15,12 +13,11 @@ struct Tv: Codable {
     }
 }
 
-
 struct TvResult: Codable , Identifiable{
     let adult: Bool
     let backdropPath: String
     let genreIDS: [Int]
-    let id: Int
+    let id : Int
     let originCountry: [String]
     let originalLanguage, originalName, overview: String
     let popularity: Double

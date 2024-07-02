@@ -66,6 +66,6 @@ struct TvDetailsView: View {
 }
 
 #Preview {
-    TvDetailsView(tvShow: TvResult(adult: false, backdropPath: "test", genreIDS: [1,2,3], id: 1, originCountry: ["test"], originalLanguage: "test", originalName: "test", overview: "test", popularity: 5.0, posterPath: "test", firstAirDate: "test", name: "test", voteAverage: 5.0, voteCount: 5))
+    TvDetailsView(tvShow: TvResult(adult: false, backdropPath: "test",  genreIDS: [1,2,3]  , id: 51500 , originCountry: ["test"], originalLanguage: "test", originalName: "test", overview: "test", popularity: 5.0, posterPath: "test", firstAirDate: "test", name: "test", voteAverage: 5.0, voteCount: 5))
 }
 

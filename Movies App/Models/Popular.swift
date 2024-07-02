@@ -1,7 +1,6 @@
 
 //  Created by Batuhan Berk Ertekin on 30.06.2024.
 
-
 import Foundation
 
 struct Popular: Codable {
@@ -16,7 +15,6 @@ struct Popular: Codable {
     }
 }
 
-
 struct PopularResult: Codable ,Identifiable {
     let id: Int
     let adult: Bool
@@ -29,8 +27,6 @@ struct PopularResult: Codable ,Identifiable {
     let voteAverage: Double
     let voteCount: Int
     
- 
-
     enum CodingKeys: String, CodingKey {
         case adult
         case backdropPath = "backdrop_path"
