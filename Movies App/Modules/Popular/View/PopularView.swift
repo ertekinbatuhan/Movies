@@ -8,7 +8,7 @@ struct PopularView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                VStack(spacing: 20) {
+                LazyVStack(spacing: 20) {
                     ForEach(PopularHelper.filteredPopularResults(results: viewModel.popular, searchText: searchText)) { movie in
                         NavigationLink(destination: PopularDetailsView(movie: movie)) {
                             VStack {
