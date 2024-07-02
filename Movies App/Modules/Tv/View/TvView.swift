@@ -6,7 +6,7 @@ struct TvView: View {
     @State private var searchText = ""
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ScrollView {
                 LazyVStack(spacing: 20) {
                     ForEach(TvHelper.filteredTvShows(tvShows: viewModel.tvShows, searchText: searchText)) { tvShow in

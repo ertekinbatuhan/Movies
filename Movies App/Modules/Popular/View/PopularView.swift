@@ -6,7 +6,7 @@ struct PopularView: View {
     @State private var searchText = ""
    
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ScrollView {
                 VStack(spacing: 20) {
                     ForEach(PopularHelper.filteredPopularResults(results: viewModel.popular, searchText: searchText)) { movie in
