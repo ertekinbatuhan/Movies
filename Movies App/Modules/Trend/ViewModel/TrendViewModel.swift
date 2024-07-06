@@ -13,7 +13,7 @@ class TrendViewModel: ObservableObject {
         guard page <= totalPages else { return }
 
         do {
-            let response = try await fetchItems(from: APIConstants.MOVIE_URL, apiKey: APIConstants.API_KEY, page: page, responseType: Trend.self)
+            let response = try await fetchItems(from: APIConstants.TREND_URL, apiKey: APIConstants.API_KEY, page: page, responseType: Trend.self)
             if page == 1 {
                 self.movies = response.results
             } else {

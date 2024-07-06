@@ -14,7 +14,7 @@ struct Trend: Codable {
 }
 
 struct TrendResult: Codable , Identifiable{
-    let backdropPath: String?
+    let backdropPath: String
     let id: Int
     let title, originalTitle: String?
     let overview, posterPath: String
@@ -59,6 +59,7 @@ enum MediaType: String, Codable {
 
 enum OriginalLanguage: String, Codable {
     case en = "en"
+    case es = "es"
     case ja = "ja"
     case ko = "ko"
 }
