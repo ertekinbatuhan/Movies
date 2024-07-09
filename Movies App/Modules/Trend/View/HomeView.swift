@@ -85,7 +85,7 @@ struct HomeView: View {
                                             NavigationLink(destination: TvDetailsView(tvShow: tvShow)) {
                                                 VStack {
                                                     ZStack {
-                                                        AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/w500\(tvShow.posterPath)")) { tvResult in
+                                                        AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/w500\(tvShow.posterPath ?? "")")) { tvResult in
                                                             switch tvResult {
                                                             case .success(let image):
                                                                 image

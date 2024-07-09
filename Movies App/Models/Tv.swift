@@ -21,7 +21,8 @@ struct TvResult: Codable , Identifiable{
     let originCountry: [String]
     let originalLanguage, originalName, overview: String
     let popularity: Double
-    let posterPath, firstAirDate, name: String
+    let firstAirDate, name: String
+    let posterPath : String?
     let voteAverage: Double
     let voteCount: Int
 
@@ -41,3 +42,4 @@ struct TvResult: Codable , Identifiable{
         case voteCount = "vote_count"
     }
 }
+
