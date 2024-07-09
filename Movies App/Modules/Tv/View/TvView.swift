@@ -40,17 +40,19 @@ struct TvView: View {
                                             .background(Color.white.opacity(0.8))
                                             .cornerRadius(10)
                                             .shadow(radius: 4)
+                                            .frame(maxWidth: .infinity, alignment: .leading)
+                                            .padding(.top,7)
                                     }
                                     .padding(.leading, 10)
-                                    
+
                                     Spacer()
-                                    
+
                                     VStack(alignment: .trailing) {
                                         RatingView(rating: tvShow.voteAverage)
                                             .padding(.horizontal, 10)
                                     }
                                 }
-                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .frame(maxWidth: .infinity)
                                 .padding(.bottom, 8)
                                 .background(Color.gray.opacity(0.2))
                                 .cornerRadius(15)
