@@ -49,18 +49,17 @@ git clone https://github.com/ertekinbatuhan/Movies.git
   ```bash
 cd Movies
 ```
-3. Install the necessary dependencies:
+3. Open the project with Xcode:
 ```bash
-pod install
+open Movies.xcodeproj
+
 ```
 4. Get your TMDB API key and add it to the APIService.swift file:
 ```bash
 let apiKey = "YOUR_TMDB_API_KEY"
 ```
-5. Open the project with Xcode:
- ```bash
-open Movies.xcworkspace
-```
+
+5. Ruh the project.
 
 ## Technologies Used
 - Swift
