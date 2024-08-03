@@ -59,7 +59,7 @@ open Movies.xcodeproj
 let apiKey = "YOUR_TMDB_API_KEY"
 ```
 
-5. Ruh the project.
+5. Run the project.
 
 ## Technologies Used
 - Swift
