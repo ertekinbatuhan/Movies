@@ -28,6 +28,20 @@
     <img src="https://github.com/ertekinbatuhan/Movies/assets/101355515/885f68c8-84ad-44ad-bcaa-2b30b71cec60" alt="image4" width="200">
 </div>
 
+## Technologies Used
+- Swift
+- SwiftUI
+- TMDB API
+
+ ## Architecture Used
+The Finance Tracker app is built using the MVVM (Model-View-ViewModel) architectural pattern. This architecture helps to separate the business logic and data handling from the user interface, making the app more modular, testable, and maintainable.
+
+- **Model**: Represents the data and business logic of the application. It handles the data operations and communicates with external services or databases.
+- **View**: The user interface of the app, responsible for displaying the data and handling user interactions.
+- **ViewModel**: Acts as an intermediary between the Model and the View. It processes the data received from the Model and prepares it for display in the View, also handling user input and updating the Model accordingly.
+
+![Screenshot 2024-08-09 at 12 31 02](https://github.com/user-attachments/assets/f79044cc-7b40-4d2f-abc1-716dd6384964)
+
 ## API Usage
 
 The application uses the following TMDB API endpoints:
@@ -35,6 +49,7 @@ The application uses the following TMDB API endpoints:
 - [Trending movies and TV shows](https://api.themoviedb.org/3/trending/all/day)
 - [Discover TV shows](https://api.themoviedb.org/3/discover/tv)
 - [Popular movies](https://api.themoviedb.org/3/movie/popular)
+
 
 ## Installation
 
@@ -61,8 +76,4 @@ let apiKey = "YOUR_TMDB_API_KEY"
 
 5. Run the project.
 
-## Technologies Used
-- Swift
-- SwiftUI
-- TMDB API
-  
+
