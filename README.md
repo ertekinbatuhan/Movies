@@ -9,6 +9,7 @@
 - Trending movies and TV shows
 - Popular movies
 - Detailed movie and TV show information
+- Easily search for trending movies and TV shows to find what interests you.
 - User-friendly interface
 - Modern design with SwiftUI
 
