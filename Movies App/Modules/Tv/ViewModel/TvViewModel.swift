@@ -3,6 +3,10 @@
 
 import Foundation
 
+protocol TvViewModelProtocol {
+    func fetchTvShows(page : Int) async
+}
+
 @MainActor
 class TvViewModel: ObservableObject {
     
