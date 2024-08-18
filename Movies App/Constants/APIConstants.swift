@@ -9,9 +9,11 @@ import Foundation
 
 struct APIConstants {
     
-    static let TREND_URL = "https://api.themoviedb.org/3/trending/all/day"
-    static let TV_URL = "https://api.themoviedb.org/3/discover/tv"
-    static let POPULAR_URL = "https://api.themoviedb.org/3/movie/popular"
-    static let API_KEY = "$$$$$$$$$$$$$$$$$$$$$$$$$$$"
+    static let baseURL = "https://api.themoviedb.org/3"
+    static let API_KEY = "$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
+    static let TREND_URL = "\(baseURL)/trending/all/day"
+    static let TV_URL = "\(baseURL)/discover/tv"
+    static let POPULAR_URL = "\(baseURL)/movie/popular"
     
 }
+
