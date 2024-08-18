@@ -17,7 +17,7 @@ class TrendViewModel: ObservableObject {
         guard page <= totalPages else { return }
 
         do {
-            let response = try await fetchItems(from: APIConstants.TREND_URL, apiKey: APIConstants.API_KEY, page: page, responseType: Trend.self)
+            let response = try await NetworkService.shared.fetchItems(from: APIConstants.TREND_URL, apiKey: APIConstants.API_KEY, page: page, responseType: Trend.self)
             if page == 1 {
                 self.movies = response.results
             } else {
@@ -28,21 +28,6 @@ class TrendViewModel: ObservableObject {
         } catch {
             self.errorMessage = error.localizedDescription
             print("Error fetching movies: \(error.localizedDescription)")
-        }
-    }
-    
-    private func fetchItems<T: Codable>(from url: String, apiKey: String, page: Int, responseType: T.Type) async throws -> T {
-        guard let url = URL(string: "\(url)?api_key=\(apiKey)&page=\(page)") else {
-            throw NetworkError.invalidURL
-        }
-        
-        do {
-            let (data, _) = try await URLSession.shared.data(from: url)
-            return try JSONDecoder().decode(T.self, from: data)
-        } catch let error as DecodingError {
-            throw NetworkError.decodingFailed(error)
-        } catch {
-            throw NetworkError.requestFailed(error)
         }
     }
 }
