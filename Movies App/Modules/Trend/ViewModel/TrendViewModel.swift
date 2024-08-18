@@ -1,6 +1,10 @@
 
 import Foundation
 
+protocol TrendViewModelProtocol {
+    func fetchTrendingMovies(page : Int) async
+}
+
 @MainActor
 class TrendViewModel: ObservableObject {
     
