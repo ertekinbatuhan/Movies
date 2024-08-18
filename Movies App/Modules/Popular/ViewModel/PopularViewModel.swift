@@ -1,5 +1,9 @@
 import SwiftUI
 
+protocol PopularViewModelProtocol {
+    func fetchPopularMovies(page : Int) async
+}
+
 @MainActor
 class PopularViewModel: ObservableObject {
     
