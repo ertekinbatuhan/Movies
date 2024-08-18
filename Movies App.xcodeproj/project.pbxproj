@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C02AA3772C31EE9700ACDBC3 /* TvHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02AA3762C31EE9600ACDBC3 /* TvHelper.swift */; };
 		C02AA3792C31EF6900ACDBC3 /* PopularHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02AA3782C31EF6900ACDBC3 /* PopularHelper.swift */; };
+		C02CC71F2C7266C80013477E /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02CC71E2C7266C80013477E /* NetworkService.swift */; };
 		C06983D02C31D071001DE9C8 /* PopularViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06983CF2C31D071001DE9C8 /* PopularViewModel.swift */; };
 		C06983D22C31D143001DE9C8 /* TvViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06983D12C31D143001DE9C8 /* TvViewModel.swift */; };
 		C0863A4C2C315CA00019986A /* Movies_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0863A4B2C315CA00019986A /* Movies_AppApp.swift */; };
@@ -33,6 +34,7 @@
 /* Begin PBXFileReference section */
 		C02AA3762C31EE9600ACDBC3 /* TvHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvHelper.swift; sourceTree = "<group>"; };
 		C02AA3782C31EF6900ACDBC3 /* PopularHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularHelper.swift; sourceTree = "<group>"; };
+		C02CC71E2C7266C80013477E /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		C06983CF2C31D071001DE9C8 /* PopularViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularViewModel.swift; sourceTree = "<group>"; };
 		C06983D12C31D143001DE9C8 /* TvViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvViewModel.swift; sourceTree = "<group>"; };
 		C0863A482C315CA00019986A /* Movies App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Movies App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +75,14 @@
 				C02AA3782C31EF6900ACDBC3 /* PopularHelper.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		C02CC71D2C7266B70013477E /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				C0863A6F2C316D680019986A /* APIConstants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		C06983CC2C31CF88001DE9C8 /* Trend */ = {
@@ -172,6 +182,7 @@
 		C0863A4A2C315CA00019986A /* Movies App */ = {
 			isa = PBXGroup;
 			children = (
+				C02CC71D2C7266B70013477E /* Constants */,
 				C0B0B9CF2C32DA4300D0F917 /* App */,
 				C02AA3752C31EE4A00ACDBC3 /* Helpers */,
 				C0863A5C2C315CE20019986A /* Enums */,
@@ -196,7 +207,7 @@
 		C0863A5B2C315CDD0019986A /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				C0863A6F2C316D680019986A /* APIConstants.swift */,
+				C02CC71E2C7266C80013477E /* NetworkService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -326,6 +337,7 @@
 				C0863A4E2C315CA00019986A /* HomeView.swift in Sources */,
 				C0863A722C316E980019986A /* TvView.swift in Sources */,
 				C0863A612C315D090019986A /* TrendViewModel.swift in Sources */,
+				C02CC71F2C7266C80013477E /* NetworkService.swift in Sources */,
 				C0863A5E2C315CEF0019986A /* NetworkError.swift in Sources */,
 				C0863A742C3171F70019986A /* RatingView.swift in Sources */,
 				C0863A672C315D3C0019986A /* Popular.swift in Sources */,
