@@ -7,7 +7,6 @@
 ## Features
 
 - Trending movies and TV shows
-- Popular movies
 - Detailed movie and TV show information
 - Easily search for trending movies and TV shows to find what interests you.
 - User-friendly interface
@@ -35,7 +34,7 @@
 - TMDB API
 
  ## Architecture Used
-The Finance Tracker app is built using the MVVM (Model-View-ViewModel) architectural pattern. This architecture helps to separate the business logic and data handling from the user interface, making the app more modular, testable, and maintainable.
+The Movies app is built using the MVVM (Model-View-ViewModel) architectural pattern. This architecture helps to separate the business logic and data handling from the user interface, making the app more modular, testable, and maintainable.
 
 - **Model**: Represents the data and business logic of the application. It handles the data operations and communicates with external services or databases.
 - **View**: The user interface of the app, responsible for displaying the data and handling user interactions.
